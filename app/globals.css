@@ -1,21 +1,454 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 🌎 Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 🖋️ Base Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #ff9800,
+    #d32f2f
+  ); /* Sunset Orange Gradient */
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure the gradient covers the full viewport */
+}
+
+/* 📌 Navbar */
+nav {
+  background-color: #1a237e;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+/* 🔘 Buttons */
+button,
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover,
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* 📌 Form Styling */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s;
+  background-color: white;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* 📌 Booking Container */
+.booking-container {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* 📌 Footer */
+footer {
+  background-color: #1a237e;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* 📌 About Page Hero Section */
+.hero-section {
+  background: url("/hero-image.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* ✅ Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 20px; /* ✅ Adds spacing between elements */
+}
+
+.hero-section h1 {
+  font-size: 4rem; /* Increase heading size */
+  font-weight: 800; /* Make it bolder */
+  color: white; /* Gold color */
+}
+
+.hero-section p {
+  font-size: 1.4rem;
+  max-width: 600px;
+  color: black; /* Ensure text is visible */
+  margin: 10px auto;
+}
+
+.hero-section a {
+  display: inline-block;
+  background-color: #ffd700;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-section a:hover {
+  background-color: #e6c300;
+}
+
+/* 📌 Admin Panel */
+.admin-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* 📌 About Page Styling */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9800, #d32f2f);
+  padding: 80px 20px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif; /* ✅ Apply modern font */
+}
+
+/* 📌 Guru Information Section */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  color: black;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 📌 Responsive Design */
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* 📌 About Page Styling */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9800, #d32f2f);
+  padding: 100px 200px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif; /* ✅ Modern & Clean Font */
+}
+
+/* 📌 About Box (With Translucent Background) */
+.about-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15); /* ✅ Translucent effect */
+  backdrop-filter: blur(10px); /* ✅ Smooth glass effect */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  width: 90%;
+}
+
+/* 📌 Responsive Design: Side-by-Side Layout on Larger Screens */
+@media (min-width: 768px) {
+  .about-box {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* 📌 Guru Image */
+.about-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.about-image img {
+  width: 280px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Guru Name */
+.about-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a237e; /* ✅ Attractive Dark Blue */
+  margin-top: 10px;
+}
+
+/* 📌 Guru Information */
+.about-text {
+  padding-left: 30px;
+  max-width: 600px;
+}
+
+.about-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff; /* ✅ White text for better visibility */
+  text-align: justify;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* 📌 Services Page Styling */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9800, #d32f2f);
+  padding: 100px 20px; /* ✅ More spacing above & below */
+  min-height: 100vh;
+}
+
+/* 📌 Service Card Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); /* ✅ Ensures 3-column layout */
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* 📌 Service Card Styling */
+.service-card {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 15px; /* ✅ Rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Uniform Image Size */
+.service-image {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* 📌 Uniform Text Size */
+.service-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* 📌 Highlighted Last Line */
+.service-highlight {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffd700;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 40px;
+}
+/* 📌 Contact Page Styling */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #FF9800, #D32F2F);
+  padding: 100px 20px;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 📌 Contact Form Box with Translucent Background */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15); /* ✅ Translucent Effect */
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+}
+
+/* 📌 Input Fields with Proper Spacing */
+.contact-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px; /* ✅ Increased spacing between fields */
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+/* 📌 Dropdown Styling */
+.contact-dropdown {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px; /* ✅ Proper margin */
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-dropdown:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+/* 📌 Phone Input Container */
+.phone-container {
+  display: flex;
+  gap: 10px; /* ✅ Added spacing between country code and number */
+}
+
+/* 📌 Submit Button */
+.contact-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #FFD700;
+  color: #1A237E;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+  background: #FFC107;
+  box-shadow: 0 5px 10px rgba(255, 215, 0, 0.5);
+}
+
+/* 📌 Success Message */
+.contact-message {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
 }
